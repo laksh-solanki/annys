@@ -1,37 +1,33 @@
 import Link from 'next/link';
+import { Navbar, Nav, Container } from 'react-bootstrap';
 
-const Navbar = () => {
+const AppNavbar = () => {
   return (
-    <nav className="bg-gray-800 p-4">
-      <div className="container mx-auto flex justify-between items-center">
-        <Link href="/" className="text-white text-2xl font-bold">
+    <Navbar bg="dark" variant="dark" expand="lg">
+      <Container>
+        <Navbar.Brand as={Link} href="/">
           Annys
-        </Link>
-        <ul className="flex space-x-4">
-          <li>
-            <Link href="/" className="text-gray-300 hover:text-white">
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link as={Link} href="/">
               Home
-            </Link>
-          </li>
-          <li>
-            <Link href="/about" className="text-gray-300 hover:text-white">
+            </Nav.Link>
+            <Nav.Link as={Link} href="/about">
               About
-            </Link>
-          </li>
-          <li>
-            <Link href="/services" className="text-gray-300 hover:text-white">
+            </Nav.Link>
+            <Nav.Link as={Link} href="/services">
               Services
-            </Link>
-          </li>
-          <li>
-            <Link href="/contact" className="text-gray-300 hover:text-white">
+            </Nav.Link>
+            <Nav.Link as={Link} href="/contact">
               Contact
-            </Link>
-          </li>
-        </ul>
-      </div>
-    </nav>
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 };
 
-export default Navbar;
+export default AppNavbar;
